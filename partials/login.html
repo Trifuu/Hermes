@@ -1,0 +1,39 @@
+<div class="login container">
+  <div class="login-content">
+    <div class="login-branding">
+      <img class="logo-icon" src="public/img/grafana_icon.svg" alt="Grafana" />
+      <span style="font-size:32px;">Hermes</span>
+    </div>
+    <div class="login-inner-box">
+      <form name="loginForm" class="login-form-group gf-form-group" ng-hide="disableLoginForm">
+        <div class="login-form">
+          <input type="text" name="username" class="gf-form-input login-form-input" required ng-model='formModel.user' placeholder={{loginHint}}
+            autofocus>
+        </div>
+        <div class="login-form">
+          <input type="password" name="password" class="gf-form-input login-form-input" required ng-model="formModel.password" id="inputPassword"
+            placeholder="password">
+        </div>
+        <div class="login-button-group">
+          <button type="submit" class="btn btn-large p-x-2" ng-click="submit();" ng-class="{'btn-inverse': !loginForm.$valid, 'btn-primary': loginForm.$valid}">
+            Log In
+          </button>
+        </div>
+      </form>
+      <div class="text-center login-divider" ng-show="oauthEnabled">
+        <div>
+          <div class="login-divider-line">
+          </div>
+        </div>
+        <div>
+          <span class="login-divider-text">
+            <span ng-hide="disableLoginForm">or</span>
+          </span>
+        </div>
+        <div>
+          <div class="login-divider-line">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
